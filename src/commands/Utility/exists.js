@@ -144,12 +144,10 @@ export default {
         `👻 **Phantom:** ${brainrot.mutations.phantom.toLocaleString()}`,
       ].join('\n');
 
-      const embed = createEmbed({
-        title: "Exist Count",
-        description:
-          `### ${brainrotName}\n` +
-          `*Data forked from the Sammy Leaks*`,
-      })
+const embed = createEmbed({
+  title: brainrotName,
+  description: `*Data forked from the Sammy Leaks*`,
+})
         .addFields(
           {
             name: "Exist Count",
