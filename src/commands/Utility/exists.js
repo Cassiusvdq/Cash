@@ -146,7 +146,7 @@ export default {
 
 const embed = createEmbed({
   title: brainrotName,
-  description: `*Data forked from the Sammy Leaks*`,
+  description: `*From the brainrot glossary*`,
 })
         .addFields(
           {
