@@ -1,14 +1,8 @@
-```js
 import { SlashCommandBuilder } from 'discord.js';
 import { createEmbed } from '../../utils/embeds.js';
 import { logger } from '../../utils/logger.js';
 import { handleInteractionError } from '../../utils/errorHandler.js';
 import { InteractionHelper } from '../../utils/interactionHelper.js';
-
-// ==========================================
-// BRAINROT DATA
-// Add or edit brainrots here.
-// ==========================================
 
 const brainrots = {
   "Los Sekolahs": {
@@ -104,10 +98,6 @@ const brainrots = {
   },
 };
 
-// ==========================================
-// SLASH COMMAND
-// ==========================================
-
 export default {
   data: new SlashCommandBuilder()
     .setName("exists")
@@ -120,36 +110,22 @@ export default {
         .setAutocomplete(true)
     ),
 
-  // ========================================
-  // COMMAND EXECUTION
-  // ========================================
-
   async execute(interaction) {
     try {
       const deferSuccess = await InteractionHelper.safeDefer(interaction);
 
       if (!deferSuccess) {
-        logger.warn(`Exists interaction defer failed`, {
-          userId: interaction.user.id,
-          guildId: interaction.guildId,
-          commandName: 'exists',
-        });
         return;
       }
 
       const brainrotName = interaction.options.getString("brainrot");
       const brainrot = brainrots[brainrotName];
 
-      // Brainrot not found
       if (!brainrot) {
         return await InteractionHelper.safeEditReply(interaction, {
           content: `❌ I couldn't find a brainrot called **${brainrotName}**.`,
         });
       }
-
-      // ======================================
-      // MUTATION DISPLAY
-      // ======================================
 
       const mutationLines = [
         `⚪ **Base:** ${brainrot.mutations.base.toLocaleString()}`,
@@ -167,10 +143,6 @@ export default {
         `🤖 **Cyber:** ${brainrot.mutations.cyber.toLocaleString()}`,
         `👻 **Phantom:** ${brainrot.mutations.phantom.toLocaleString()}`,
       ].join('\n');
-
-      // ======================================
-      // CREATE EMBED
-      // ======================================
 
       const embed = createEmbed({
         title: "Exist Count",
@@ -204,14 +176,9 @@ export default {
           text: "⚠️ DISCLAIMER: The bot only updates when Sammy provides new data.",
         });
 
-      // Add brainrot image if one exists
       if (brainrot.image) {
         embed.setThumbnail(brainrot.image);
       }
-
-      // ======================================
-      // SEND RESPONSE
-      // ======================================
 
       await InteractionHelper.safeEditReply(interaction, {
         embeds: [embed],
@@ -240,15 +207,9 @@ export default {
     }
   },
 
-  // ========================================
-  // AUTOCOMPLETE
-  // ========================================
-
   async autocomplete(interaction) {
     try {
-      const focusedValue = interaction.options
-        .getFocused()
-        .toLowerCase();
+      const focusedValue = interaction.options.getFocused().toLowerCase();
 
       const choices = Object.keys(brainrots);
 
@@ -268,79 +229,11 @@ export default {
     } catch (error) {
       console.error("Autocomplete error:", error);
 
-      // Prevents Discord from showing an error if autocomplete fails
-      if (!interaction.responded) {
+      try {
         await interaction.respond([]);
-      }
-    }
-  }
-
-  // ========================================
-  // AUTOCOMPLETE
-  // ========================================
-
-  async autocomplete(interaction) {
-    try {
-      const focusedValue = interaction.options
-        .getFocused()
-        .toLowerCase();
-
-      const choices = Object.keys(brainrots);
-
-      const filtered = choices
-        .filter(name =>
-          name.toLowerCase().includes(focusedValue)
-        )
-        .slice(0, 25);
-
-      await interaction.respond(
-        filtered.map(name => ({
-          name: name,
-          value: name,
-        }))
-      );
-
-    } catch (error) {
-      console.error("Autocomplete error:", error);
-
-      // Prevents Discord from showing an error if autocomplete fails
-      if (!interaction.responded) {
-        await interaction.respond([]);
-      }
-    }
-  }
-
-  // ========================================
-  // AUTOCOMPLETE
-  // ========================================
-
-  async autocomplete(interaction) {
-    try {
-      const focusedValue = interaction.options
-        .getFocused()
-        .toLowerCase();
-
-      const choices = Object.keys(brainrots);
-
-      const filtered = choices
-        .filter(name =>
-          name.toLowerCase().includes(focusedValue)
-        )
-        .slice(0, 25);
-
-      await interaction.respond(
-        filtered.map(name => ({
-          name: name,
-          value: name,
-        }))
-      );
-
-    } catch (error) {
-      console.error("Autocomplete error:", error);
-
-      // Prevents Discord from showing an error if autocomplete fails
-      if (!interaction.responded) {
-        await interaction.respond([]);
+      } catch (respondError) {
+        console.error("Failed to respond to autocomplete:", respondError);
       }
     }
   },
+};
