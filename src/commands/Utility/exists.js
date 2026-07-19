@@ -245,24 +245,102 @@ export default {
   // ========================================
 
   async autocomplete(interaction) {
-    const focusedValue = interaction.options
-      .getFocused()
-      .toLowerCase();
+    try {
+      const focusedValue = interaction.options
+        .getFocused()
+        .toLowerCase();
 
-    const choices = Object.keys(brainrots);
+      const choices = Object.keys(brainrots);
 
-    const filtered = choices
-      .filter(name =>
-        name.toLowerCase().includes(focusedValue)
-      )
-      .slice(0, 25);
+      const filtered = choices
+        .filter(name =>
+          name.toLowerCase().includes(focusedValue)
+        )
+        .slice(0, 25);
 
-    await interaction.respond(
-      filtered.map(name => ({
-        name,
-        value: name,
-      }))
-    );
+      await interaction.respond(
+        filtered.map(name => ({
+          name: name,
+          value: name,
+        }))
+      );
+
+    } catch (error) {
+      console.error("Autocomplete error:", error);
+
+      // Prevents Discord from showing an error if autocomplete fails
+      if (!interaction.responded) {
+        await interaction.respond([]);
+      }
+    }
+  }
+
+  // ========================================
+  // AUTOCOMPLETE
+  // ========================================
+
+  async autocomplete(interaction) {
+    try {
+      const focusedValue = interaction.options
+        .getFocused()
+        .toLowerCase();
+
+      const choices = Object.keys(brainrots);
+
+      const filtered = choices
+        .filter(name =>
+          name.toLowerCase().includes(focusedValue)
+        )
+        .slice(0, 25);
+
+      await interaction.respond(
+        filtered.map(name => ({
+          name: name,
+          value: name,
+        }))
+      );
+
+    } catch (error) {
+      console.error("Autocomplete error:", error);
+
+      // Prevents Discord from showing an error if autocomplete fails
+      if (!interaction.responded) {
+        await interaction.respond([]);
+      }
+    }
+  }
+
+  // ========================================
+  // AUTOCOMPLETE
+  // ========================================
+
+  async autocomplete(interaction) {
+    try {
+      const focusedValue = interaction.options
+        .getFocused()
+        .toLowerCase();
+
+      const choices = Object.keys(brainrots);
+
+      const filtered = choices
+        .filter(name =>
+          name.toLowerCase().includes(focusedValue)
+        )
+        .slice(0, 25);
+
+      await interaction.respond(
+        filtered.map(name => ({
+          name: name,
+          value: name,
+        }))
+      );
+
+    } catch (error) {
+      console.error("Autocomplete error:", error);
+
+      // Prevents Discord from showing an error if autocomplete fails
+      if (!interaction.responded) {
+        await interaction.respond([]);
+      }
+    }
   },
-};
-```
