@@ -1,3 +1,4 @@
+```js
 import { SlashCommandBuilder } from 'discord.js';
 import { createEmbed } from '../../utils/embeds.js';
 import { logger } from '../../utils/logger.js';
@@ -16,11 +17,20 @@ const brainrots = {
     income: "12/s",
     image: null,
     mutations: {
-      galaxy: 48,
+      base: 0,
       gold: 33,
       diamond: 19,
       rainbow: 16,
+      bloodrot: 0,
+      candy: 0,
+      lava: 0,
+      galaxy: 48,
+      yinYang: 0,
+      radioactive: 0,
+      cursed: 0,
       divine: 1,
+      cyber: 0,
+      phantom: 0,
     },
   },
 
@@ -31,11 +41,19 @@ const brainrots = {
     image: null,
     mutations: {
       base: 0,
-      galaxy: 0,
       gold: 0,
       diamond: 0,
       rainbow: 0,
+      bloodrot: 0,
+      candy: 0,
+      lava: 0,
+      galaxy: 0,
+      yinYang: 0,
+      radioactive: 0,
+      cursed: 0,
       divine: 0,
+      cyber: 0,
+      phantom: 0,
     },
   },
 
@@ -45,11 +63,20 @@ const brainrots = {
     income: "8/s",
     image: null,
     mutations: {
-      galaxy: 0,
+      base: 0,
       gold: 0,
       diamond: 0,
       rainbow: 0,
+      bloodrot: 0,
+      candy: 0,
+      lava: 0,
+      galaxy: 0,
+      yinYang: 0,
+      radioactive: 0,
+      cursed: 0,
       divine: 0,
+      cyber: 0,
+      phantom: 0,
     },
   },
 
@@ -59,11 +86,20 @@ const brainrots = {
     income: "6/s",
     image: null,
     mutations: {
-      galaxy: 0,
+      base: 0,
       gold: 0,
       diamond: 0,
       rainbow: 0,
+      bloodrot: 0,
+      candy: 0,
+      lava: 0,
+      galaxy: 0,
+      yinYang: 0,
+      radioactive: 0,
+      cursed: 0,
       divine: 0,
+      cyber: 0,
+      phantom: 0,
     },
   },
 };
@@ -116,11 +152,20 @@ export default {
       // ======================================
 
       const mutationLines = [
-        `🟣 **Galaxy:** ${brainrot.mutations.galaxy.toLocaleString()}`,
+        `⚪ **Base:** ${brainrot.mutations.base.toLocaleString()}`,
         `🟡 **Gold:** ${brainrot.mutations.gold.toLocaleString()}`,
         `🔷 **Diamond:** ${brainrot.mutations.diamond.toLocaleString()}`,
         `🌈 **Rainbow:** ${brainrot.mutations.rainbow.toLocaleString()}`,
+        `🔴 **Bloodrot:** ${brainrot.mutations.bloodrot.toLocaleString()}`,
+        `🍬 **Candy:** ${brainrot.mutations.candy.toLocaleString()}`,
+        `🌋 **Lava:** ${brainrot.mutations.lava.toLocaleString()}`,
+        `🟣 **Galaxy:** ${brainrot.mutations.galaxy.toLocaleString()}`,
+        `☯️ **Yin Yang:** ${brainrot.mutations.yinYang.toLocaleString()}`,
+        `☢️ **Radioactive:** ${brainrot.mutations.radioactive.toLocaleString()}`,
+        `💀 **Cursed:** ${brainrot.mutations.cursed.toLocaleString()}`,
         `🔶 **Divine:** ${brainrot.mutations.divine.toLocaleString()}`,
+        `🤖 **Cyber:** ${brainrot.mutations.cyber.toLocaleString()}`,
+        `👻 **Phantom:** ${brainrot.mutations.phantom.toLocaleString()}`,
       ].join('\n');
 
       // ======================================
@@ -220,3 +265,4 @@ export default {
     );
   },
 };
+```
