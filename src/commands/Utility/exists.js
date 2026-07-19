@@ -30,6 +30,7 @@ const brainrots = {
     income: "10/s",
     image: null,
     mutations: {
+      base: 0,
       galaxy: 0,
       gold: 0,
       diamond: 0,
