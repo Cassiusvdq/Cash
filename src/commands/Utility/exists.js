@@ -38,6 +38,35 @@ const brainrots = {
     },
   },
 
+  "Cash": {
+    exists: 1000,
+    rarity: "Mythic",
+    income: "8/s",
+    image: null,
+    mutations: {
+      galaxy: 0,
+      gold: 0,
+      diamond: 0,
+      rainbow: 0,
+      divine: 0,
+    },
+  },
+
+  "Cupid": {
+    exists: 750,
+    rarity: "Legendary",
+    income: "6/s",
+    image: null,
+    mutations: {
+      galaxy: 0,
+      gold: 0,
+      diamond: 0,
+      rainbow: 0,
+      divine: 0,
+    },
+  },
+};
+
 // ==========================================
 // SLASH COMMAND
 // ==========================================
