@@ -4,26 +4,88 @@ import { logger } from '../../utils/logger.js';
 import { handleInteractionError } from '../../utils/errorHandler.js';
 import { InteractionHelper } from '../../utils/interactionHelper.js';
 
-// Brainrot exist counts
-// Change these numbers whenever you want to update the counts.
+// ==========================================
+// BRAINROT DATA
+// Add or edit brainrots here.
+// ==========================================
+
 const brainrots = {
-  "Los Sekolahs": 5000,
-  "Chillin Chilli": 2500,
-  "Cash": 1000,
-  "Cupid": 750,
+  "Los Sekolahs": {
+    exists: 5000,
+    rarity: "Secret",
+    income: "12/s",
+    image: null,
+    mutations: {
+      galaxy: 48,
+      gold: 33,
+      diamond: 19,
+      rainbow: 16,
+      divine: 1,
+    },
+  },
+
+  "Chillin Chilli": {
+    exists: 2500,
+    rarity: "Secret",
+    income: "10/s",
+    image: null,
+    mutations: {
+      galaxy: 0,
+      gold: 0,
+      diamond: 0,
+      rainbow: 0,
+      divine: 0,
+    },
+  },
+
+  "Cash": {
+    exists: 1000,
+    rarity: "Mythic",
+    income: "8/s",
+    image: null,
+    mutations: {
+      galaxy: 0,
+      gold: 0,
+      diamond: 0,
+      rainbow: 0,
+      divine: 0,
+    },
+  },
+
+  "Cupid": {
+    exists: 750,
+    rarity: "Legendary",
+    income: "6/s",
+    image: null,
+    mutations: {
+      galaxy: 0,
+      gold: 0,
+      diamond: 0,
+      rainbow: 0,
+      divine: 0,
+    },
+  },
 };
+
+// ==========================================
+// SLASH COMMAND
+// ==========================================
 
 export default {
   data: new SlashCommandBuilder()
     .setName("exists")
-    .setDescription("Check how many of a brainrot exist")
+    .setDescription("Check the exist count of a brainrot")
     .addStringOption(option =>
       option
         .setName("brainrot")
-        .setDescription("Enter the name of the brainrot")
+        .setDescription("Select a brainrot")
         .setRequired(true)
         .setAutocomplete(true)
     ),
+
+  // ========================================
+  // COMMAND EXECUTION
+  // ========================================
 
   async execute(interaction) {
     try {
@@ -33,24 +95,77 @@ export default {
         logger.warn(`Exists interaction defer failed`, {
           userId: interaction.user.id,
           guildId: interaction.guildId,
-          commandName: 'exists'
+          commandName: 'exists',
         });
         return;
       }
 
       const brainrotName = interaction.options.getString("brainrot");
-      const count = brainrots[brainrotName];
+      const brainrot = brainrots[brainrotName];
 
-      if (count === undefined) {
+      // Brainrot not found
+      if (!brainrot) {
         return await InteractionHelper.safeEditReply(interaction, {
           content: `❌ I couldn't find a brainrot called **${brainrotName}**.`,
         });
       }
 
+      // ======================================
+      // MUTATION DISPLAY
+      // ======================================
+
+      const mutationLines = [
+        `🟣 **Galaxy:** ${brainrot.mutations.galaxy.toLocaleString()}`,
+        `🟡 **Gold:** ${brainrot.mutations.gold.toLocaleString()}`,
+        `🔷 **Diamond:** ${brainrot.mutations.diamond.toLocaleString()}`,
+        `🌈 **Rainbow:** ${brainrot.mutations.rainbow.toLocaleString()}`,
+        `🔶 **Divine:** ${brainrot.mutations.divine.toLocaleString()}`,
+      ].join('\n');
+
+      // ======================================
+      // CREATE EMBED
+      // ======================================
+
       const embed = createEmbed({
-        title: `🧠 ${brainrotName}`,
-        description: `**Exist Count:** ${count.toLocaleString()}`,
-      });
+        title: "Exist Count",
+        description:
+          `### ${brainrotName}\n` +
+          `*Data forked from the Sammy Leaks*`,
+      })
+        .addFields(
+          {
+            name: "Exist Count",
+            value: brainrot.exists.toLocaleString(),
+            inline: true,
+          },
+          {
+            name: "Rarity",
+            value: brainrot.rarity,
+            inline: true,
+          },
+          {
+            name: "Income",
+            value: brainrot.income,
+            inline: true,
+          },
+          {
+            name: "Mutations",
+            value: mutationLines,
+            inline: false,
+          },
+        )
+        .setFooter({
+          text: "⚠️ DISCLAIMER: The bot only updates when Sammy provides new data.",
+        });
+
+      // Add brainrot image if one exists
+      if (brainrot.image) {
+        embed.setThumbnail(brainrot.image);
+      }
+
+      // ======================================
+      // SEND RESPONSE
+      // ======================================
 
       await InteractionHelper.safeEditReply(interaction, {
         embeds: [embed],
@@ -60,7 +175,7 @@ export default {
         userId: interaction.user.id,
         guildId: interaction.guildId,
         brainrotName,
-        count,
+        exists: brainrot.exists,
       });
 
     } catch (error) {
@@ -69,23 +184,31 @@ export default {
         stack: error.stack,
         userId: interaction.user.id,
         guildId: interaction.guildId,
-        commandName: 'exists'
+        commandName: 'exists',
       });
 
       await handleInteractionError(interaction, error, {
         commandName: 'exists',
-        source: 'exists_command'
+        source: 'exists_command',
       });
     }
   },
 
+  // ========================================
+  // AUTOCOMPLETE
+  // ========================================
+
   async autocomplete(interaction) {
-    const focusedValue = interaction.options.getFocused().toLowerCase();
+    const focusedValue = interaction.options
+      .getFocused()
+      .toLowerCase();
 
     const choices = Object.keys(brainrots);
 
     const filtered = choices
-      .filter(name => name.toLowerCase().includes(focusedValue))
+      .filter(name =>
+        name.toLowerCase().includes(focusedValue)
+      )
       .slice(0, 25);
 
     await interaction.respond(
