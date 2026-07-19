@@ -49,8 +49,8 @@ const brainrots = {
       cyber: 979,
       phantom: 0,
     },
-  };
-
+  },
+};
 
 export default {
   data: new SlashCommandBuilder()
@@ -98,10 +98,10 @@ export default {
         `👻 **Phantom:** ${brainrot.mutations.phantom.toLocaleString()}`,
       ].join('\n');
 
-const embed = createEmbed({
-  title: brainrotName,
-  description: `*From the brainrot glossary*`,
-})
+      const embed = createEmbed({
+        title: brainrotName,
+        description: `*From the brainrot glossary*`,
+      })
         .addFields(
           {
             name: "Exist Count",
@@ -128,6 +128,7 @@ const embed = createEmbed({
           text: "⚠️ DISCLAIMER: The bot only updates when Sammy provides new data.",
         });
 
+      // Add brainrot image
       if (brainrot.image) {
         embed.setThumbnail(brainrot.image);
       }
@@ -189,3 +190,4 @@ const embed = createEmbed({
     }
   },
 };
+```
