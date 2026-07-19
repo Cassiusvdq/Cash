@@ -32,7 +32,7 @@ const brainrots = {
     exists: 9447,
     rarity: "Secret",
     income: "$75M/s",
-    image: null,
+    image: "https://static.wikia.nocookie.net/stealabr/images/c/c3/Los_Chillis.png/revision/latest?cb=20260419152650",
     mutations: {
       base: 6310,
       gold: 916,
