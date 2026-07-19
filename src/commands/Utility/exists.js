@@ -34,7 +34,7 @@ const brainrots = {
     income: "$75M/s",
     image: null,
     mutations: {
-      base: 6,310,
+      base: 6310,
       gold: 916,
       diamond: 421,
       rainbow: 119,
