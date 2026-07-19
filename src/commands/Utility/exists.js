@@ -49,54 +49,8 @@ const brainrots = {
       cyber: 979,
       phantom: 0,
     },
-  },
+  };
 
-  "Cash": {
-    exists: 1000,
-    rarity: "Mythic",
-    income: "8/s",
-    image: null,
-    mutations: {
-      base: 0,
-      gold: 0,
-      diamond: 0,
-      rainbow: 0,
-      bloodrot: 0,
-      candy: 0,
-      lava: 0,
-      galaxy: 0,
-      yinYang: 0,
-      radioactive: 0,
-      cursed: 0,
-      divine: 0,
-      cyber: 0,
-      phantom: 0,
-    },
-  },
-
-  "Cupid": {
-    exists: 750,
-    rarity: "Legendary",
-    income: "6/s",
-    image: null,
-    mutations: {
-      base: 0,
-      gold: 0,
-      diamond: 0,
-      rainbow: 0,
-      bloodrot: 0,
-      candy: 0,
-      lava: 0,
-      galaxy: 0,
-      yinYang: 0,
-      radioactive: 0,
-      cursed: 0,
-      divine: 0,
-      cyber: 0,
-      phantom: 0,
-    },
-  },
-};
 
 export default {
   data: new SlashCommandBuilder()
