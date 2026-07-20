@@ -28,12 +28,12 @@ const brainrots = {
   },
 
   "Los Chillis": {
-    exists: 9447,
+    exists: 6310,
     rarity: "Secret",
     income: "$75M/s",
     image: "https://static.wikia.nocookie.net/stealabr/images/c/c3/Los_Chillis.png/revision/latest?cb=20260419152650",
     mutations: {
-      base: 6310,
+      base: 3173,
       gold: 916,
       diamond: 421,
       rainbow: 119,
