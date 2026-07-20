@@ -28,28 +28,29 @@ const brainrots = {
     },
   },
 
-"Los Chillis": {
-  exists: 9447,
-  rarity: "Secret",
-  income: "$75M/s",
-  image: "https://static.wikia.nocookie.net/stealabr/images/c/c3/Los_Chillis.png/revision/latest?cb=20260419152650",
-  mutations: {
-    base: 6310,
-    gold: 916,
-    diamond: 421,
-    rainbow: 119,
-    bloodrot: 73,
-    candy: 41,
-    lava: 4,
-    galaxy: 133,
-    yinYang: 450,
-    radioactive: 1,
-    cursed: 0,
-    divine: 0,
-    cyber: 979,
-    phantom: 0,
+  "Los Chillis": {
+    exists: 9447,
+    rarity: "Secret",
+    income: "$75M/s",
+    image: "https://static.wikia.nocookie.net/stealabr/images/c/c3/Los_Chillis.png/revision/latest?cb=20260419152650",
+    mutations: {
+      base: 6310,
+      gold: 916,
+      diamond: 421,
+      rainbow: 119,
+      bloodrot: 73,
+      candy: 41,
+      lava: 4,
+      galaxy: 133,
+      yinYang: 450,
+      radioactive: 1,
+      cursed: 0,
+      divine: 0,
+      cyber: 979,
+      phantom: 0,
+    },
   },
-},
+};
 
 export default {
   data: new SlashCommandBuilder()
