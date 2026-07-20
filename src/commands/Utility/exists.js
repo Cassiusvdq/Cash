@@ -28,7 +28,7 @@ const brainrots = {
   },
 
     "Antonio": {
-    exists: 1423,
+    exists: 1652,
     rarity: "Secret",
     income: "$1250000",
     image: "https://static.wikia.nocookie.net/stealabr/images/f/f0/Antonio.png/revision/latest?cb=20260327204416",
