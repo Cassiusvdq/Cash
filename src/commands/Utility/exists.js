@@ -5,7 +5,7 @@ import { InteractionHelper } from '../../utils/interactionHelper.js';
 
 const brainrots = {
   "Agarrini la Palini": {
-    exists: "2500000",
+    exists: 2500000,
     rarity: "Secret",
     income: "$425K/s",
     image: "https://static.wikia.nocookie.net/stealabr/images/d/de/Agarrini_la_Palini.png/revision/latest?cb=20260428162721",
