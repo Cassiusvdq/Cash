@@ -28,29 +28,70 @@ const brainrots = {
     },
   },
 
-  "Los Chillis": {
-    exists: 9447,
-    rarity: "Secret",
-    income: "$75M/s",
-    image: "https://static.wikia.nocookie.net/stealabr/images/c/c3/Los_Chillis.png/revision/latest?cb=20260419152650",
-    mutations: {
-      base: 6310,
-      gold: 916,
-      diamond: 421,
-      rainbow: 119,
-      bloodrot: 73,
-      candy: 41,
-      lava: 4,
-      galaxy: 133,
-      yinYang: 450,
-      radioactive: 1,
-      cursed: 0,
-      divine: 0,
-      cyber: 979,
-      phantom: 0,
+"Los Chillis": {
+  exists: 9447,
+  rarity: "Secret",
+  income: "$75M/s",
+  image: "https://static.wikia.nocookie.net/stealabr/images/c/c3/Los_Chillis.png/revision/latest?cb=20260419152650",
+  mutations: {
+    base: {
+      count: 6310,
+      image: "https://static.wikia.nocookie.net/stealabr/images/4/41/Default_Mutation_Icon.png/revision/latest?cb=20251112160311",
+    },
+    gold: {
+      count: 916,
+      image: "https://static.wikia.nocookie.net/stealabr/images/0/0f/Gold_Mutation_Icon.png/revision/latest?cb=20251014022450",
+    },
+    diamond: {
+      count: 421,
+      image: "https://static.wikia.nocookie.net/stealabr/images/2/2c/Diamond_Mutation_Icon.png/revision/latest?cb=20251014022514",
+    },
+    rainbow: {
+      count: 119,
+      image: "https://static.wikia.nocookie.net/stealabr/images/e/e5/Rainbow_Mutation_Icon.png/revision/latest?cb=20251014022647",
+    },
+    bloodrot: {
+      count: 73,
+      image: "https://static.wikia.nocookie.net/stealabr/images/8/8e/Bloodrot_Mutation_Icon.png/revision/latest?cb=20251014022607",
+    },
+    candy: {
+      count: 41,
+      image: "https://static.wikia.nocookie.net/stealabr/images/4/4a/Candy_Mutation_Icon.png/revision/latest?cb=20251014022832",
+    },
+    lava: {
+      count: 4,
+      image: "https://static.wikia.nocookie.net/stealabr/images/8/88/Lava_Mutation_Icon.png/revision/latest?cb=20251014022920",
+    },
+    galaxy: {
+      count: 133,
+      image: "https://static.wikia.nocookie.net/stealabr/images/7/7b/Galaxy_Mutation_Icon.png/revision/latest?cb=20251014023008",
+    },
+    yinYang: {
+      count: 450,
+      image: "https://static.wikia.nocookie.net/stealabr/images/8/83/Yin_Yang_Mutation_Icon.png/revision/latest?cb=20251014023114",
+    },
+    radioactive: {
+      count: 1,
+      image: "https://static.wikia.nocookie.net/stealabr/images/d/d4/Radioactive_Mutation_Icon.png/revision/latest?cb=20260314224939",
+    },
+    cursed: {
+      count: 0,
+      image: "https://static.wikia.nocookie.net/stealabr/images/9/94/Cursed_Mutation_Icon.png/revision/latest?cb=20260314225017",
+    },
+    divine: {
+      count: 0,
+      image: "https://static.wikia.nocookie.net/stealabr/images/d/d4/Divine_Mutation_Icon.png/revision/latest?cb=20260222035304",
+    },
+    cyber: {
+      count: 979,
+      image: "https://static.wikia.nocookie.net/stealabr/images/d/d8/Cyber_Mutation_Icon.png/revision/latest?cb=20260520201734",
+    },
+    phantom: {
+      count: 0,
+      image: "https://static.wikia.nocookie.net/stealabr/images/6/6d/Phantom_Mutation_Icon.png/revision/latest?cb=20260615120847",
     },
   },
-};
+},
 
 export default {
   data: new SlashCommandBuilder()
@@ -81,22 +122,22 @@ export default {
         });
       }
 
-      const mutationLines = [
-        `⚪ **Base:** ${brainrot.mutations.base.toLocaleString()}`,
-        `🟡 **Gold:** ${brainrot.mutations.gold.toLocaleString()}`,
-        `🔷 **Diamond:** ${brainrot.mutations.diamond.toLocaleString()}`,
-        `🌈 **Rainbow:** ${brainrot.mutations.rainbow.toLocaleString()}`,
-        `🔴 **Bloodrot:** ${brainrot.mutations.bloodrot.toLocaleString()}`,
-        `🍬 **Candy:** ${brainrot.mutations.candy.toLocaleString()}`,
-        `🌋 **Lava:** ${brainrot.mutations.lava.toLocaleString()}`,
-        `🟣 **Galaxy:** ${brainrot.mutations.galaxy.toLocaleString()}`,
-        `☯️ **Yin Yang:** ${brainrot.mutations.yinYang.toLocaleString()}`,
-        `☢️ **Radioactive:** ${brainrot.mutations.radioactive.toLocaleString()}`,
-        `💀 **Cursed:** ${brainrot.mutations.cursed.toLocaleString()}`,
-        `🔶 **Divine:** ${brainrot.mutations.divine.toLocaleString()}`,
-        `🤖 **Cyber:** ${brainrot.mutations.cyber.toLocaleString()}`,
-        `👻 **Phantom:** ${brainrot.mutations.phantom.toLocaleString()}`,
-      ].join('\n');
+const mutationLines = [
+  `⚪ **Base:** ${brainrot.mutations.base.count.toLocaleString()}`,
+  `🟡 **Gold:** ${brainrot.mutations.gold.count.toLocaleString()}`,
+  `🔷 **Diamond:** ${brainrot.mutations.diamond.count.toLocaleString()}`,
+  `🌈 **Rainbow:** ${brainrot.mutations.rainbow.count.toLocaleString()}`,
+  `🔴 **Bloodrot:** ${brainrot.mutations.bloodrot.count.toLocaleString()}`,
+  `🍬 **Candy:** ${brainrot.mutations.candy.count.toLocaleString()}`,
+  `🌋 **Lava:** ${brainrot.mutations.lava.count.toLocaleString()}`,
+  `🟣 **Galaxy:** ${brainrot.mutations.galaxy.count.toLocaleString()}`,
+  `☯️ **Yin Yang:** ${brainrot.mutations.yinYang.count.toLocaleString()}`,
+  `☢️ **Radioactive:** ${brainrot.mutations.radioactive.count.toLocaleString()}`,
+  `💀 **Cursed:** ${brainrot.mutations.cursed.count.toLocaleString()}`,
+  `🔶 **Divine:** ${brainrot.mutations.divine.count.toLocaleString()}`,
+  `🤖 **Cyber:** ${brainrot.mutations.cyber.count.toLocaleString()}`,
+  `👻 **Phantom:** ${brainrot.mutations.phantom.count.toLocaleString()}`,
+].join('\n');
 
       const embed = createEmbed({
         title: brainrotName,
