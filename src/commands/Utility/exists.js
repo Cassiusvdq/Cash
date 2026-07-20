@@ -85,9 +85,20 @@ export default {
       // ==========================================
 
 const mutationLines = [
-  `TEST 😀 😎 🔥 ❤️ ⭐`,
   `⬜ **Base:** ${brainrot.mutations.base.toLocaleString()}`,
   `🟨 **Gold:** ${brainrot.mutations.gold.toLocaleString()}`,
+  `🔹 **Diamond:** ${brainrot.mutations.diamond.toLocaleString()}`,
+  `🌈 **Rainbow:** ${brainrot.mutations.rainbow.toLocaleString()}`,
+  `🟥 **Bloodrot:** ${brainrot.mutations.bloodrot.toLocaleString()}`,
+  `🍬 **Candy:** ${brainrot.mutations.candy.toLocaleString()}`,
+  `🌋 **Lava:** ${brainrot.mutations.lava.toLocaleString()}`,
+  `🟪 **Galaxy:** ${brainrot.mutations.galaxy.toLocaleString()}`,
+  `☯️ **Yin Yang:** ${brainrot.mutations.yinYang.toLocaleString()}`,
+  `☢️ **Radioactive:** ${brainrot.mutations.radioactive.toLocaleString()}`,
+  `💀 **Cursed:** ${brainrot.mutations.cursed.toLocaleString()}`,
+  `🔶 **Divine:** ${brainrot.mutations.divine.toLocaleString()}`,
+  `🤖 **Cyber:** ${brainrot.mutations.cyber.toLocaleString()}`,
+  `👻 **Phantom:** ${brainrot.mutations.phantom.toLocaleString()}`,
 ];
 
       // ==========================================
@@ -116,7 +127,7 @@ embed.addFields([
   },
   {
     name: "Mutations",
-    value: String(mutationLines),
+    value: mutationLines.join("\n"),
     inline: false,
   },
 ]);
@@ -132,9 +143,8 @@ if (brainrot.image) {
 await InteractionHelper.safeEditReply(interaction, {
   embeds: [embed],
 });
-  .setFooter({
-    text: "⚠️ DISCLAIMER: The bot only updates when Sammy provides new data.",
-  });
+
+logger.info(`Exists command executed`, {
 
       // ==========================================
       // BRAINROT IMAGE
