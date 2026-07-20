@@ -27,6 +27,29 @@ const brainrots = {
     },
   },
 
+    "Antonio": {
+    exists: 2500000,
+    rarity: "Secret",
+    income: "$1250000",
+    image: "https://static.wikia.nocookie.net/stealabr/images/f/f0/Antonio.png/revision/latest?cb=20260327204416",
+    mutations: {
+      base: ,
+      gold: 110,
+      diamond: 46,
+      rainbow: 29,
+      bloodrot: 3,
+      candy: 1,
+      lava: 3,
+      galaxy: 30,
+      yinYang: 7,
+      radioactive: 0,
+      cursed: 0,
+      divine: 0,
+      cyber: 0,
+      phantom: 0,
+    },
+  },
+
   "Los Chillis": {
     exists: 6310,
     rarity: "Secret",
