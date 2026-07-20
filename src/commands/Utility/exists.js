@@ -30,7 +30,7 @@ const brainrots = {
     "Antonio": {
     exists: 1652,
     rarity: "Secret",
-    income: "$1250000",
+    income: "125M/s",
     image: "https://static.wikia.nocookie.net/stealabr/images/f/f0/Antonio.png/revision/latest?cb=20260327204416",
     mutations: {
       base: 1423,
@@ -143,10 +143,10 @@ export default {
             inline: true,
           },
           {
-            name: "Income",
-            value: String(brainrot.income),
-            inline: true,
-          },
+  name: "Income",
+  value: `$${brainrot.income.toLocaleString()}/s`,
+  inline: true,
+},
           {
             name: "Mutations",
             value: mutationLines,
