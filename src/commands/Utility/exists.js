@@ -85,7 +85,6 @@ export default {
       // ==========================================
 
       const mutationLines = [
-        `TEST 😀 😎 🔥 ❤️ ⭐`,
         `⬜ **Base:** ${brainrot.mutations.base.toLocaleString()}`,
         `🟨 **Gold:** ${brainrot.mutations.gold.toLocaleString()}`,
         `🔷 **Diamond:** ${brainrot.mutations.diamond.toLocaleString()}`,
