@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from 'discord.js';
-import { createEmbed } from '../../utils/embeds.js';
+import { EmbedBuilder } from 'discord.js';
 import { logger } from '../../utils/logger.js';
 import { handleInteractionError } from '../../utils/errorHandler.js';
 import { InteractionHelper } from '../../utils/interactionHelper.js';
@@ -95,37 +95,34 @@ const mutationLines = [
       // CREATE EMBED
       // ==========================================
 
-      const embed = createEmbed({
-        title: brainrotName,
-        description: "*From the brainrot glossary*",
-      });
-
-      embed.addFields(
-        {
-          name: "Exist Count",
-          value: brainrot.exists.toLocaleString(),
-          inline: true,
-        },
-        {
-          name: "Rarity",
-          value: brainrot.rarity,
-          inline: true,
-        },
-        {
-          name: "Income",
-          value: brainrot.income,
-          inline: true,
-        },
-        {
-          name: "Mutations",
-          value: mutationLines,
-          inline: false,
-        },
-      );
-
-      embed.setFooter({
-        text: "⚠️ DISCLAIMER: The bot only updates when Sammy provides new data.",
-      });
+const embed = new EmbedBuilder()
+  .setTitle(brainrotName)
+  .setDescription("*From the brainrot glossary*")
+  .addFields(
+    {
+      name: "Exist Count",
+      value: brainrot.exists.toLocaleString(),
+      inline: true,
+    },
+    {
+      name: "Rarity",
+      value: brainrot.rarity,
+      inline: true,
+    },
+    {
+      name: "Income",
+      value: brainrot.income,
+      inline: true,
+    },
+    {
+      name: "Mutations",
+      value: mutationLines,
+      inline: false,
+    },
+  )
+  .setFooter({
+    text: "⚠️ DISCLAIMER: The bot only updates when Sammy provides new data.",
+  });
 
       // ==========================================
       // BRAINROT IMAGE
