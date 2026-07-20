@@ -85,22 +85,11 @@ export default {
       // MUTATIONS
       // ==========================================
 
-      const mutationLines = [
-        `⬜ **Base:** ${brainrot.mutations.base.toLocaleString()}`,
-        `🟨 **Gold:** ${brainrot.mutations.gold.toLocaleString()}`,
-        `🔹 **Diamond:** ${brainrot.mutations.diamond.toLocaleString()}`,
-        `🌈 **Rainbow:** ${brainrot.mutations.rainbow.toLocaleString()}`,
-        `🟥 **Bloodrot:** ${brainrot.mutations.bloodrot.toLocaleString()}`,
-        `🍬 **Candy:** ${brainrot.mutations.candy.toLocaleString()}`,
-        `🌋 **Lava:** ${brainrot.mutations.lava.toLocaleString()}`,
-        `🟪 **Galaxy:** ${brainrot.mutations.galaxy.toLocaleString()}`,
-        `☯️ **Yin Yang:** ${brainrot.mutations.yinYang.toLocaleString()}`,
-        `☢️ **Radioactive:** ${brainrot.mutations.radioactive.toLocaleString()}`,
-        `💀 **Cursed:** ${brainrot.mutations.cursed.toLocaleString()}`,
-        `🔶 **Divine:** ${brainrot.mutations.divine.toLocaleString()}`,
-        `🤖 **Cyber:** ${brainrot.mutations.cyber.toLocaleString()}`,
-        `👻 **Phantom:** ${brainrot.mutations.phantom.toLocaleString()}`,
-      ].join('\n');
+const mutationLines = [
+  `TEST 😀 😎 🔥 ❤️ ⭐`,
+  `⬜ **Base:** ${brainrot.mutations.base.toLocaleString()}`,
+  `🟨 **Gold:** ${brainrot.mutations.gold.toLocaleString()}`,
+];
 
       // ==========================================
       // CREATE EMBED
