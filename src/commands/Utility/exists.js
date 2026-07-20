@@ -7,7 +7,7 @@ const brainrots = {
   "Agarrini la Palini": {
     exists: 2500000,
     rarity: "Secret",
-    income: "$425K",
+    income: "425K",
     image: "https://static.wikia.nocookie.net/stealabr/images/d/de/Agarrini_la_Palini.png/revision/latest?cb=20260428162721",
     mutations: {
       base: 2062500,
@@ -53,7 +53,7 @@ const brainrots = {
   "Los Chillis": {
     exists: 6310,
     rarity: "Secret",
-    income: "$75M",
+    income: "75M",
     image: "https://static.wikia.nocookie.net/stealabr/images/c/c3/Los_Chillis.png/revision/latest?cb=20260419152650",
     mutations: {
       base: 3173,
