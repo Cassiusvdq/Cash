@@ -107,35 +107,35 @@ const mutationLines = [
       // CREATE EMBED
       // ==========================================
 
-      const embed = createEmbed({
-        title: brainrotName,
-        description: `*From the brainrot glossary*`,
-      })
-        .addFields(
-          {
-            name: "Exist Count",
-            value: brainrot.exists.toLocaleString(),
-            inline: true,
-          },
-          {
-            name: "Rarity",
-            value: brainrot.rarity,
-            inline: true,
-          },
-          {
-            name: "Income",
-            value: brainrot.income,
-            inline: true,
-          },
-          {
-            name: "Mutations",
-            value: mutationLines,
-            inline: false,
-          },
-        )
-        .setFooter({
-          text: "⚠️ DISCLAIMER: The bot only updates when Sammy provides new data.",
-        });
+     const embed = createEmbed({
+  title: brainrotName,
+  description: `🟡 🟣 🔴 🌈 💀 🤖 👻`,
+})
+  .addFields(
+    {
+      name: "Exist Count",
+      value: brainrot.exists.toLocaleString(),
+      inline: true,
+    },
+    {
+      name: "Rarity",
+      value: brainrot.rarity,
+      inline: true,
+    },
+    {
+      name: "Income",
+      value: brainrot.income,
+      inline: true,
+    },
+    {
+      name: "Mutations",
+      value: mutationLines,
+      inline: false,
+    },
+  )
+  .setFooter({
+    text: "⚠️ DISCLAIMER: The bot only updates when Sammy provides new data.",
+  });
 
       // ==========================================
       // BRAINROT IMAGE
