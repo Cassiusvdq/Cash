@@ -50,6 +50,30 @@ const brainrots = {
     },
   },
 
+   "Arcadragon": {
+    exists: 154,
+    rarity: "Secret",
+    income: "215M",
+    image: "https://static.wikia.nocookie.net/stealabr/images/4/47/Arcadragon_Brainrot.png/revision/latest?cb=20260412144930",
+    mutations: {
+      base: 130,
+      gold: 16,
+      diamond: 7,
+      rainbow: 1,
+      bloodrot: 0,
+      candy: 0,
+      lava: 0,
+      galaxy: 0,
+      yinYang: 0,
+      radioactive: 0,
+      cursed: 0,
+      divine: 0,
+      cyber: 0,
+      phantom: 0,
+    },
+  },
+
+
   "Los Chillis": {
     exists: 6310,
     rarity: "Secret",
