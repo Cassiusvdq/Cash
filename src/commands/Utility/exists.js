@@ -7,7 +7,7 @@ const brainrots = {
   "Agarrini la Palini": {
     exists: 2500000,
     rarity: "Secret",
-    income: "$425K/s",
+    income: "$425K",
     image: "https://static.wikia.nocookie.net/stealabr/images/d/de/Agarrini_la_Palini.png/revision/latest?cb=20260428162721",
     mutations: {
       base: 2062500,
@@ -30,7 +30,7 @@ const brainrots = {
     "Antonio": {
     exists: 1652,
     rarity: "Secret",
-    income: "125M/s",
+    income: "125M",
     image: "https://static.wikia.nocookie.net/stealabr/images/f/f0/Antonio.png/revision/latest?cb=20260327204416",
     mutations: {
       base: 1423,
@@ -53,7 +53,7 @@ const brainrots = {
   "Los Chillis": {
     exists: 6310,
     rarity: "Secret",
-    income: "$75M/s",
+    income: "$75M",
     image: "https://static.wikia.nocookie.net/stealabr/images/c/c3/Los_Chillis.png/revision/latest?cb=20260419152650",
     mutations: {
       base: 3173,
