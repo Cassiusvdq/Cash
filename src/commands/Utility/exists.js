@@ -111,7 +111,7 @@ export default {
         .addFields(
           {
             name: "Exist Count",
-            value: String(brainrot.exists),
+            value: brainrot.exists.toLocaleString(),
             inline: true,
           },
           {
