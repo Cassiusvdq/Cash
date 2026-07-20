@@ -33,7 +33,7 @@ const brainrots = {
     income: "$1250000",
     image: "https://static.wikia.nocookie.net/stealabr/images/f/f0/Antonio.png/revision/latest?cb=20260327204416",
     mutations: {
-      base: ,
+      base: 1423,
       gold: 110,
       diamond: 46,
       rainbow: 29,
