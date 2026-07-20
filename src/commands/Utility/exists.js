@@ -84,67 +84,56 @@ export default {
       // MUTATIONS
       // ==========================================
 
-const mutationLines = [
-  `⬜ **Base:** ${brainrot.mutations.base.toLocaleString()}`,
-  `🟨 **Gold:** ${brainrot.mutations.gold.toLocaleString()}`,
-  `🔹 **Diamond:** ${brainrot.mutations.diamond.toLocaleString()}`,
-  `🌈 **Rainbow:** ${brainrot.mutations.rainbow.toLocaleString()}`,
-  `🟥 **Bloodrot:** ${brainrot.mutations.bloodrot.toLocaleString()}`,
-  `🍬 **Candy:** ${brainrot.mutations.candy.toLocaleString()}`,
-  `🌋 **Lava:** ${brainrot.mutations.lava.toLocaleString()}`,
-  `🟪 **Galaxy:** ${brainrot.mutations.galaxy.toLocaleString()}`,
-  `☯️ **Yin Yang:** ${brainrot.mutations.yinYang.toLocaleString()}`,
-  `☢️ **Radioactive:** ${brainrot.mutations.radioactive.toLocaleString()}`,
-  `💀 **Cursed:** ${brainrot.mutations.cursed.toLocaleString()}`,
-  `🔶 **Divine:** ${brainrot.mutations.divine.toLocaleString()}`,
-  `🤖 **Cyber:** ${brainrot.mutations.cyber.toLocaleString()}`,
-  `👻 **Phantom:** ${brainrot.mutations.phantom.toLocaleString()}`,
-];
+      const mutationLines = [
+        `TEST 😀 😎 🔥 ❤️ ⭐`,
+        `⬜ **Base:** ${brainrot.mutations.base.toLocaleString()}`,
+        `🟨 **Gold:** ${brainrot.mutations.gold.toLocaleString()}`,
+        `🔷 **Diamond:** ${brainrot.mutations.diamond.toLocaleString()}`,
+        `🌈 **Rainbow:** ${brainrot.mutations.rainbow.toLocaleString()}`,
+        `🟥 **Bloodrot:** ${brainrot.mutations.bloodrot.toLocaleString()}`,
+        `🍬 **Candy:** ${brainrot.mutations.candy.toLocaleString()}`,
+        `🌋 **Lava:** ${brainrot.mutations.lava.toLocaleString()}`,
+        `🟪 **Galaxy:** ${brainrot.mutations.galaxy.toLocaleString()}`,
+        `☯️ **Yin Yang:** ${brainrot.mutations.yinYang.toLocaleString()}`,
+        `☢️ **Radioactive:** ${brainrot.mutations.radioactive.toLocaleString()}`,
+        `💀 **Cursed:** ${brainrot.mutations.cursed.toLocaleString()}`,
+        `🔶 **Divine:** ${brainrot.mutations.divine.toLocaleString()}`,
+        `🤖 **Cyber:** ${brainrot.mutations.cyber.toLocaleString()}`,
+        `👻 **Phantom:** ${brainrot.mutations.phantom.toLocaleString()}`,
+      ].join('\n');
 
       // ==========================================
       // CREATE EMBED
       // ==========================================
 
-const embed = new EmbedBuilder()
-  .setTitle(brainrotName)
-  .setDescription("*From the brainrot glossary*");
-
-embed.addFields([
-  {
-    name: "Exist Count",
-    value: String(brainrot.exists),
-    inline: true,
-  },
-  {
-    name: "Rarity",
-    value: String(brainrot.rarity),
-    inline: true,
-  },
-  {
-    name: "Income",
-    value: String(brainrot.income),
-    inline: true,
-  },
-  {
-    name: "Mutations",
-    value: mutationLines.join("\n"),
-    inline: false,
-  },
-]);
-
-embed.setFooter({
-  text: "⚠️ DISCLAIMER: The bot only updates when Sammy provides new data.",
-});
-
-if (brainrot.image) {
-  embed.setThumbnail(brainrot.image);
-}
-
-await InteractionHelper.safeEditReply(interaction, {
-  embeds: [embed],
-});
-
-logger.info(`Exists command executed`, {
+      const embed = new EmbedBuilder()
+        .setTitle(brainrotName)
+        .setDescription("*From the brainrot glossary*")
+        .addFields(
+          {
+            name: "Exist Count",
+            value: String(brainrot.exists),
+            inline: true,
+          },
+          {
+            name: "Rarity",
+            value: String(brainrot.rarity),
+            inline: true,
+          },
+          {
+            name: "Income",
+            value: String(brainrot.income),
+            inline: true,
+          },
+          {
+            name: "Mutations",
+            value: mutationLines,
+            inline: false,
+          }
+        )
+        .setFooter({
+          text: "⚠️ DISCLAIMER: The bot only updates when Sammy provides new data.",
+        });
 
       // ==========================================
       // BRAINROT IMAGE
