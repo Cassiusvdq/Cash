@@ -75,7 +75,6 @@ export default {
       const brainrotName = interaction.options.getString("brainrot");
       const brainrot = brainrots[brainrotName];
 
-      // Brainrot not found
       if (!brainrot) {
         return await InteractionHelper.safeEditReply(interaction, {
           content: `❌ I couldn't find a brainrot called **${brainrotName}**.`,
@@ -86,56 +85,58 @@ export default {
       // MUTATIONS
       // ==========================================
 
-const mutationLines = [
-  `⬜ Base: ${brainrot.mutations.base.toLocaleString()}`,
-  `🟨 Gold: ${brainrot.mutations.gold.toLocaleString()}`,
-  `🔹 Diamond: ${brainrot.mutations.diamond.toLocaleString()}`,
-  `🌈 Rainbow: ${brainrot.mutations.rainbow.toLocaleString()}`,
-  `🟥 Bloodrot: ${brainrot.mutations.bloodrot.toLocaleString()}`,
-  `🍬 Candy: ${brainrot.mutations.candy.toLocaleString()}`,
-  `🌋 Lava: ${brainrot.mutations.lava.toLocaleString()}`,
-  `🟪 Galaxy: ${brainrot.mutations.galaxy.toLocaleString()}`,
-  `☯️ Yin Yang: ${brainrot.mutations.yinYang.toLocaleString()}`,
-  `☢️ Radioactive: ${brainrot.mutations.radioactive.toLocaleString()}`,
-  `💀 Cursed: ${brainrot.mutations.cursed.toLocaleString()}`,
-  `🔶 Divine: ${brainrot.mutations.divine.toLocaleString()}`,
-  `🤖 Cyber: ${brainrot.mutations.cyber.toLocaleString()}`,
-  `👻 Phantom: ${brainrot.mutations.phantom.toLocaleString()}`,
-].join('\n');
+      const mutationLines = [
+        `⬜ **Base:** ${brainrot.mutations.base.toLocaleString()}`,
+        `🟨 **Gold:** ${brainrot.mutations.gold.toLocaleString()}`,
+        `🔹 **Diamond:** ${brainrot.mutations.diamond.toLocaleString()}`,
+        `🌈 **Rainbow:** ${brainrot.mutations.rainbow.toLocaleString()}`,
+        `🟥 **Bloodrot:** ${brainrot.mutations.bloodrot.toLocaleString()}`,
+        `🍬 **Candy:** ${brainrot.mutations.candy.toLocaleString()}`,
+        `🌋 **Lava:** ${brainrot.mutations.lava.toLocaleString()}`,
+        `🟪 **Galaxy:** ${brainrot.mutations.galaxy.toLocaleString()}`,
+        `☯️ **Yin Yang:** ${brainrot.mutations.yinYang.toLocaleString()}`,
+        `☢️ **Radioactive:** ${brainrot.mutations.radioactive.toLocaleString()}`,
+        `💀 **Cursed:** ${brainrot.mutations.cursed.toLocaleString()}`,
+        `🔶 **Divine:** ${brainrot.mutations.divine.toLocaleString()}`,
+        `🤖 **Cyber:** ${brainrot.mutations.cyber.toLocaleString()}`,
+        `👻 **Phantom:** ${brainrot.mutations.phantom.toLocaleString()}`,
+      ].join('\n');
 
       // ==========================================
       // CREATE EMBED
       // ==========================================
 
-     const embed = createEmbed({
-  title: brainrotName,
-  description: `🟡 🟣 🔴 🌈 💀 🤖 👻`,
-})
-  .addFields(
-    {
-      name: "Exist Count",
-      value: brainrot.exists.toLocaleString(),
-      inline: true,
-    },
-    {
-      name: "Rarity",
-      value: brainrot.rarity,
-      inline: true,
-    },
-    {
-      name: "Income",
-      value: brainrot.income,
-      inline: true,
-    },
-    {
-      name: "Mutations",
-      value: mutationLines,
-      inline: false,
-    },
-  )
-  .setFooter({
-    text: "⚠️ DISCLAIMER: The bot only updates when Sammy provides new data.",
-  });
+      const embed = createEmbed({
+        title: brainrotName,
+        description: "*From the brainrot glossary*",
+      });
+
+      embed.addFields(
+        {
+          name: "Exist Count",
+          value: brainrot.exists.toLocaleString(),
+          inline: true,
+        },
+        {
+          name: "Rarity",
+          value: brainrot.rarity,
+          inline: true,
+        },
+        {
+          name: "Income",
+          value: brainrot.income,
+          inline: true,
+        },
+        {
+          name: "Mutations",
+          value: mutationLines,
+          inline: false,
+        },
+      );
+
+      embed.setFooter({
+        text: "⚠️ DISCLAIMER: The bot only updates when Sammy provides new data.",
+      });
 
       // ==========================================
       // BRAINROT IMAGE
@@ -166,12 +167,12 @@ const mutationLines = [
         stack: error.stack,
         userId: interaction.user.id,
         guildId: interaction.guildId,
-        commandName: 'exists',
+        commandName: "exists",
       });
 
       await handleInteractionError(interaction, error, {
-        commandName: 'exists',
-        source: 'exists_command',
+        commandName: "exists",
+        source: "exists_command",
       });
     }
   },
