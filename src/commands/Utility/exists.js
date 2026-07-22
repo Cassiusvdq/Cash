@@ -119,9 +119,9 @@ const brainrots = {
     },
   },
 
-   "Bearito Cabinito": {
+   "Belula Beluga": {
     exists: 4810,
-    rarity: "Secret",
+    rarity: "Brainrot God",
     income: 72500000,
     image: "https://static.wikia.nocookie.net/stealabr/images/6/6e/Bearito_Cabinito.png/revision/latest?cb=20260616234921",
     mutations: {
