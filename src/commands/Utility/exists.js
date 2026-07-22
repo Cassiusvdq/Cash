@@ -118,6 +118,29 @@ const brainrots = {
       phantom: 122,
     },
   },
+
+   "Bearito Cabinito": {
+    exists: 4810,
+    rarity: "Secret",
+    income: 72500000,
+    image: "https://static.wikia.nocookie.net/stealabr/images/6/6e/Bearito_Cabinito.png/revision/latest?cb=20260616234921",
+    mutations: {
+      base: 3156,
+      gold: 1003,
+      diamond: 459,
+      rainbow: 38,
+      bloodrot: 0,
+      candy: 12,
+      lava: 0,
+      galaxy: 18,
+      yinYang: 0,
+      radioactive: 2,
+      cursed: 0,
+      divine: 0,
+      cyber: 0,
+      phantom: 122,
+    },
+  },
 };
 
 export default {
